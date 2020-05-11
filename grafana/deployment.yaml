@@ -17,6 +17,13 @@ spec:
       containers:
       - name: grafana
         image: grafana/grafana:latest
+        env:
+          - name: GF_AUTH_BASIC_ENABLED
+            value: "true"
+          - name: GF_AUTH_ANONYMOUS_ENABLED
+            value: "true"
+          - name: GF_SECURITY_ADMIN_PASSWORD
+            value: "secret"
         ports:
         - name: grafana
           containerPort: 3000
