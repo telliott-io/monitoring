@@ -3,15 +3,15 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/server-alias: prometheus.*
-  name: prometheus
+    nginx.ingress.kubernetes.io/server-alias: jaeger.*
+  name: jaeger
   namespace: monitoring
 spec:
   rules:
-  - host: prometheus
+  - host: jaeger
     http:
       paths:
       - backend:
-          serviceName: prometheus-service
-          servicePort: 8080
+          serviceName: jaeger-query
+          servicePort: query-http
         path: /
