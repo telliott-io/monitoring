@@ -24,9 +24,6 @@ spec:
           limits:
             memory: "2Gi"
             cpu: "1000m"
-          requests: 
-            memory: "1Gi"
-            cpu: "500m"
         volumeMounts:
           - mountPath: /var/lib/grafana
             name: grafana-storage
