@@ -23,7 +23,10 @@ spec:
           - name: GF_AUTH_ANONYMOUS_ENABLED
             value: "true"
           - name: GF_SECURITY_ADMIN_PASSWORD
-            value: "secret"
+            valueFrom:
+              secretKeyRef:
+                name: grafana-admin
+                key: password
         ports:
         - name: grafana
           containerPort: 3000
