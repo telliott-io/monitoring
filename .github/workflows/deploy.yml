@@ -17,7 +17,7 @@ jobs:
       - name: 'Checkout deployments'
         uses: actions/checkout@master
         with:
-          ref: deploy
+          ref: deployment
           path: deployment
       - name: Update deployment content
         run: | 
@@ -39,6 +39,6 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          branch: deploy
+          branch: deployment
           github_token: ${{ secrets.GITHUB_TOKEN }}
           directory: deployment
