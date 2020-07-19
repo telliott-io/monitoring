@@ -28,7 +28,6 @@ jobs:
             cp -ra ../prometheus .
             cp -a ../kustomization.yaml .
             cp -a ../namespace.yaml .
-            # sed 's/newTag: latest/newTag: ${{ steps.tagName.outputs.tag }}/' ../../deployment/kustomization.yaml > kustomization.yaml
       - name: Commit
         run: |
             cd deployment
