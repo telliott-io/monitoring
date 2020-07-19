@@ -23,9 +23,9 @@ jobs:
         run: | 
             cd deployment
             rm -rf *
-            cp -a ../grafana/. .
-            cp -a ../jaeger/. .
-            cp -a ../prometheus/. .
+            cp -ra ../grafana .
+            cp -ra ../jaeger .
+            cp -ra ../prometheus .
             cp -a ../kustomization.yaml .
             cp -a ../namespace.yaml .
             # sed 's/newTag: latest/newTag: ${{ steps.tagName.outputs.tag }}/' ../../deployment/kustomization.yaml > kustomization.yaml
