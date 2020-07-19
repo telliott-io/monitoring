@@ -14,14 +14,14 @@ jobs:
           fetch-depth: 1
       - uses: olegtarasov/get-tag@v2
         id: tagName
-      - name: 'Checkout deployments'
+      - name: 'Checkout deploys'
         uses: actions/checkout@master
         with:
-          ref: deployment
-          path: deployment
-      - name: Update deployment content
+          ref: deploy
+          path: deploy
+      - name: Update deploy content
         run: | 
-            cd deployment
+            cd deploy
             rm -rf *
             cp -ra ../grafana .
             cp -ra ../jaeger .
@@ -30,7 +30,7 @@ jobs:
             cp -a ../namespace.yaml .
       - name: Commit
         run: |
-            cd deployment
+            cd deploy
             git config --global user.email "action@github.com"
             git config --global user.name "GitHub Action"
             git add -A
@@ -38,6 +38,6 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          branch: deployment
+          branch: deploy
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          directory: deployment
+          directory: deploy
