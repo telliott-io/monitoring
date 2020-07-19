@@ -1,6 +1,6 @@
 k8s_yaml("namespace.yaml")
 k8s_yaml("jaeger/jaeger.yaml")
-k8s_yaml(kustomize("grafana"))
+k8s_yaml(kustomize("grafana-local"))
 k8s_yaml(kustomize("prometheus"))
 
 k8s_resource('jaeger', port_forwards=16686)
