@@ -1,0 +1,29 @@
+name: 'kubeseal'
+description: 'Runs kubeseal.'
+author: 'Tom Elliott <tom.w.elliott@gmail.com>'
+branding:
+  icon: 'terminal'
+  color: 'purple'
+runs:
+  using: 'docker'
+  image: './Dockerfile'
+inputs:
+  name:
+    description: 'Secret name'
+    required: true
+  namespace:
+    description: 'Secret namespace'
+    required: false
+    default: 'default'
+  key:
+    description: 'Key for secret content'
+    required: true
+  value:
+    description: 'Value for secret content'
+    required: true
+  cert:
+    description: 'Signing certificate contents'
+    required: true
+  output:
+    description: 'Sealed secret file for output (in yaml format)'
+    required: true
