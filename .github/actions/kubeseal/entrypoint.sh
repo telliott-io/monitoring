@@ -7,11 +7,10 @@ if $(echo $INPUT_CERT | base64 --decode > seal.crt); then
 else
     echo "Using non-base64 cert"
     echo $INPUT_CERT > seal.crt
-    cat seal.crt
 fi
 
 kubeseal --cert seal.crt -o yaml <mysecret.json > "$INPUT_OUTPUT"
-
-cat "$INPUT_OUTPUT"
-
+RESULT=$?
 rm mysecret.json seal.crt
+
+exit $RESULT
