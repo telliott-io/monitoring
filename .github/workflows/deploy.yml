@@ -22,7 +22,6 @@ jobs:
           key: password
           value: ${{ secrets.GrafanaAdminPassword }}
           cert: ${{ secrets.SecretSigningCert }}
-          output: grafana/admin-secret.yaml
       - name: 'Checkout deploys'
         uses: actions/checkout@master
         with:

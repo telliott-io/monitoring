@@ -24,6 +24,3 @@ inputs:
   cert:
     description: 'Signing certificate contents'
     required: true
-  output:
-    description: 'Sealed secret file for output (in yaml format)'
-    required: true
