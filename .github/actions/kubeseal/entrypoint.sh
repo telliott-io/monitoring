@@ -9,5 +9,8 @@ else
     echo $INPUT_CERT > seal.crt
 fi
 
-kubeseal --cert seal.crt -o yaml <mysecret.json > grafana/admin-secret.yaml
+kubeseal --cert seal.crt -o yaml <mysecret.json > "$INPUT_OUTPUT"
+
+cat "$INPUT_OUTPUT"
+
 rm mysecret.json seal.crt
