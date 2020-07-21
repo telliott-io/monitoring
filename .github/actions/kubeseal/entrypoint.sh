@@ -5,8 +5,8 @@ kubectl create secret generic $INPUT_NAME --namespace=$INPUT_NAMESPACE --dry-run
 if $(echo $INPUT_CERT | base64 --decode > seal.crt); then
     echo "Using base64 encoded cert"
 else
-    echo "Using non-base64 cert"
-    echo $INPUT_CERT > seal.crt
+    echo "Could not decode signing cert"
+    exit 2
 fi
 
 kubeseal --cert seal.crt -o yaml <mysecret.json > "$INPUT_OUTPUT"

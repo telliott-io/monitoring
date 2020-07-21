@@ -1,3 +1,3 @@
 #!/bin/bash
 
-export SecretSigningCert="$(cat tls.crt | base64)"
+export SecretSigningCertBase64="$(cat tls.crt | base64)"
