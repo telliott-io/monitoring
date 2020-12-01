@@ -33,6 +33,7 @@ jobs:
         run: | 
             cd deploy
             rm -rf *
+            cp -ra ../loki .
             cp -ra ../grafana .
             cp -ra ../jaeger .
             cp -ra ../prometheus .
