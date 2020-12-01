@@ -12,8 +12,9 @@ jobs:
         uses: actions/checkout@master
         with:
           fetch-depth: 1
-      - uses: olegtarasov/get-tag@v2
+      - name: Set output
         id: tagName
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
       - name: Run Kubeseal
         uses: ./.github/actions/kubeseal
         with:
