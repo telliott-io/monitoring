@@ -4,5 +4,6 @@ resources:
 - namespace.yaml
 bases:
 - grafana/prod
+- loki
 - jaeger
 - prometheus
