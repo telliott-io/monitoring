@@ -1,5 +1,6 @@
 k8s_yaml("namespace.yaml")
 k8s_yaml("jaeger/jaeger.yaml")
+k8s_yaml(kustomize("loki"))
 k8s_yaml(kustomize("grafana/local"))
 k8s_yaml(kustomize("prometheus"))
 
